@@ -84,52 +84,54 @@ if __name__=='__main__':
         # Call the test_detector function to get the predicted emotion label
     predicted_emotion = test_Detector(emotion_model, emotion_labels)
     if predicted_emotion == 'Angry':
-        speak("You seems a little annoyed heres something for you to cheer you up")
+        speak("You seem a little annoyed heres something for you to cheer you up")
         response = requests.get("http://api.quotable.io/random")
-        data = response.json
-        quote=data['contents']
+        data = response.json()
+        quote=data['content']
         speak(quote)
 
     if predicted_emotion == 'Disgust':
-        speak("You seems a little disturbued is there anything i can do for you")
+        speak("You seem a little disturbued is there anything i can do for you")
+        speak("Well i think you should listen to this quote from quotable, this might help you")
         response = requests.get("http://api.quotable.io/random")
-        data = response.json
-        quote=data['contents']
+        data = response.json()
+        quote=data['content']
         speak(quote)
     
     if predicted_emotion == 'Fear':
-        speak("you seems to be traumatised of something! do you want me to take care of something?")
+        speak("you seem to be traumatised of something! do you want me to take care of something?")
+        speak("heres something for you")
         response = requests.get("http://api.quotable.io/random")
-        data = response.json
-        quote=data['contents']
+        data = response.json()
+        quote=data['content']
         speak(quote)
     
     if predicted_emotion == 'Happy':
-        speak("Ahh! you seems to be in a jolly mood,something special")
+        speak("Ahh! you seem to be in a jolly mood,i too have something special for you loading up in a moment")
         response = requests.get("http://api.quotable.io/random")
-        data = response.json
-        quote=data['contents']
+        data = response.json()
+        quote=data['content']
         speak(quote)
     
     if predicted_emotion == 'Sad':
-        speak("You seems a little depressed tell me how may i assist you")
+        speak("You see a little depressed tell me how may i assist you")
         response = requests.get("http://api.quotable.io/random")
-        data = response.json
-        quote=data['contents']
+        data = response.json()
+        quote=data['content']
         speak(quote)
     
     if predicted_emotion == 'Surprise':
         speak("you are baffeled by something, may i know why?")
         response = requests.get("http://api.quotable.io/random")
-        data = response.json
-        quote=data['contents']
+        data = response.json()
+        quote=data['content']
         speak(quote)
     
     if predicted_emotion == 'Neutral':
-        speak("i think you should express yourself openly anyway what can i do for you")
+        speak("i think you should express yourself openly anyway i have something for you")
         response = requests.get("http://api.quotable.io/random")
-        data = response.json
-        quote=data['contents']
+        data = response.json()
+        quote=data['content']
         speak(quote)
     while True:
         statement = takecommand().lower()
